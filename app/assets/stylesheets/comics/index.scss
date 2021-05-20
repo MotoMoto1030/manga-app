@@ -1,0 +1,16 @@
+.main {
+  background-color: rgb(188, 170, 143);
+}
+.title-contents {
+  width: 100vw;
+  background-image: image-url('manga-image1.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
