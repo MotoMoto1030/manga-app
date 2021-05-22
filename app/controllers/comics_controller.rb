@@ -1,15 +1,24 @@
 class ComicsController < ApplicationController
   def index
+    @comics = Comic.all.order(id: 'DESC')
   end
 
   def new
+    @comic = Comic.new
   end
 
   def create
+    @comic = Comic.new(comic_params)
+    if @comic.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
+
   private
 
   def comic_params
-    params.require(:comic).permit(:nickname, :image, :birthday).merge(user_id: current_user.id)
+    params.permit(:image, :title, :genre_id).merge(user_id: current_user.id)
   end
 end
