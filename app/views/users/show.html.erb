@@ -1,0 +1,17 @@
+<div class="mypage">
+  <p><%= @nickname %>さんの漫画一覧</p>
+
+  <% @comics.each do |comic| %>
+      <li class='list'>
+        <%= link_to "#" do %>
+          <div class='item-img-content'>
+            <%= image_tag comic.image, class: "comic-img" %>
+            <div class='item-info'>
+              <h3 class='item-name'>
+                <%= comic.title %>
+              </h3>
+          </div>
+        <% end %>
+      </li>
+      <% end %>
+</div>
