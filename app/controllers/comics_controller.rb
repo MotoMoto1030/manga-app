@@ -16,6 +16,10 @@ class ComicsController < ApplicationController
     end
   end
 
+  def show
+    @comics = Comic.all
+  end
+
   private
 
   def comic_params
