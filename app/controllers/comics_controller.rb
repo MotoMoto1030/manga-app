@@ -1,4 +1,6 @@
 class ComicsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @comics = Comic.all.order(id: 'DESC')
   end
@@ -17,7 +19,11 @@ class ComicsController < ApplicationController
   end
 
   def show
-    @comics = Comic.all
+    if user_signed_in?
+    @comic = Comic.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   private
