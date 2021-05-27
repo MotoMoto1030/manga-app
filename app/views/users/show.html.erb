@@ -14,4 +14,15 @@
         <% end %>
       </li>
       <% end %>
+    <p><%= @nickname %>さんがいいねした漫画一覧</p>
+
+      <% @users.each do |user| %>
+        <% user.liked_comics.each do |comic| %>
+          <% if current_user.already_liked?(comic) %>
+            <%= image_tag comic.image, class: "comic-img" %>
+          <% else %>
+            <p>漫画を探そう</p>
+          <% end %>
+        <% end %>
+      <% end %>
 </div>
