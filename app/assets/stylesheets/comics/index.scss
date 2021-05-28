@@ -1,8 +1,9 @@
 .main {
   background-color: rgb(188, 170, 143);
 }
+
 .title-contents {
-  width: 100vw;
+  width: 70vw;
   background-image: image-url('manga-image1.jpeg');
   background-size: cover;
   background-position: center;
@@ -13,4 +14,56 @@
   padding: 5vh 15vw;
   color: #fff;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+.feature-contents {
+  background-color: white;
+  padding: 5vh 15vw;
+}
+
+.subtitle {
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.feature-contents>.subtitle::after {
+  content: '';
+  width: 150px;
+  height: 4px;
+  background-color: #ce3c3c;
+  position: absolute;
+  bottom: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.subtitle-list {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+.comic-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.comic-lists>.list {
+  width: 50vh;
+}
+
+.comic-img-content {
+  position: relative;
+}
+
+.comic-img {
+  width: 40%;
+  height: 30%;
 }

@@ -4,31 +4,37 @@
   <%# 画面上部の帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
-      漫画フロンティアにようこそ！！
+      漫画保管庫にようこそ！！
     </h2>
     <p class='service-explain'>
-      漫画フロンティアでは気になる漫画の類似作品を探す事ができる
+      漫画保管庫では自分の好きな漫画を投稿し、
     </p>
     <p class='service-explain'>
-      アプリです
+      確認できるアプリです！
     </p>
-    <div class='store-btn'>
-    </div>
   </div>
   <%# /画面上部の帯部分  %>
 
   <%# 特徴部分 %>
   <div class='feature-contents'>
-    <h2 class='title'>
-      漫画フロンティアの特徴
+    <h2 class='subtitle'>
+      漫画保管庫の特徴
     </h2>
     <ul class='feature-lists'>
-      <li class='list'>
+      <li class='subtitle-list'>
         <h3 class='feature-list-text'>
-          類似作品を探せる！
+          自分の好きな漫画を投稿しよう！
+        </h3>
+        <p class='feature-list-descripion'>
+          漫画を投稿して視覚的に好きな漫画を保存しよう！
+        </p>
+      </li>
+      <li class='subtitle-list'>
+        <h3 class='feature-list-text'>
+          他ユーザーの投稿にいいねしよう！
         </h3>
         <p class='feature-list-description'>
-          自分の好きな漫画から類似作品を見つけよう！
+          他ユーザーの投稿に良さげな漫画があればいいねして保存しよう！
         </p>
       </li>
     </ul>
@@ -37,44 +43,30 @@
 
   <%# 作品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
-    <%= link_to '気になる漫画を共有！！', new_comic_path, class: "subtitle" %>
-    <ul class='item-lists'>
+    <%= link_to 'ここから漫画を投稿！！', new_comic_path, class: "subtitle" %>
+    <h2 class='title'>漫画集積所</h2>
+    <ul class='comic-lists'>
 
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% @comics.each do |comic| %>
       <li class='list'>
         <%= link_to comic_path (comic.id) do %>
-          <div class='item-img-content'>
+          <div class='comic-img-content'>
             <%= image_tag comic.image, class: "comic-img" %>
-            <div class='item-info'>
-              <h3 class='item-name'>
+            <div class='comic-info'>
+              <h3 class='comic-title'>
                 <%= comic.title %>
               </h3>
+              <div class="like-count">
+                <span>いいね数:</span><%= comic.liked_users.count %>
+              </div>
           </div>
         <% end %>
       </li>
-      <%= comic.liked_users.count %>
+       
       <% end %>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
 
-      <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <%# 商品がある場合は表示されないようにしましょう %>
-      <li class='list'>
-        <%= link_to '#' do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            漫画を共有してね！
-          </h3>
-        <% end %>
-      </li>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
     </ul>
   </div>
-  <%# /作品一覧 %>
 </div>
-<%= link_to('#', class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>共有する</span>
-<% end %>
+
 <%= render "shared/footer" %>
