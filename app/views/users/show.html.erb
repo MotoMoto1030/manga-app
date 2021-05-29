@@ -4,10 +4,10 @@
   <% @comics.each do |comic| %>
       <li class='list'>
         <%= link_to "#" do %>
-          <div class='item-img-content'>
+          <div class='comic-img-content'>
             <%= image_tag comic.image, class: "comic-img" %>
-            <div class='item-info'>
-              <h3 class='item-name'>
+            <div class='comic-info'>
+              <h3 class='comic-title'>
                 <%= comic.title %>
               </h3>
           </div>
@@ -21,7 +21,7 @@
           <% if current_user.already_liked?(comic) %>
             <%= image_tag comic.image, class: "comic-img" %>
           <% else %>
-            <p>漫画を探そう</p>
+            <p>まだいいねされておりません！探してきましょう！！</p>
           <% end %>
         <% end %>
       <% end %>
