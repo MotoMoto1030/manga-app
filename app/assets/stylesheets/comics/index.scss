@@ -1,5 +1,5 @@
 .main {
-  background-color: rgb(188, 170, 143);
+  background-color: rgb(255, 255, 255);
 }
 
 .title-contents {
@@ -12,12 +12,16 @@
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
-  color: #fff;
+  color: rgb(255, 255, 255);
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 }
 
+.service-title {
+  font-size: 35px;
+}
+
 .feature-contents {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 5vh 15vw;
 }
 
@@ -33,9 +37,33 @@
   height: 4px;
   background-color: #ce3c3c;
   position: absolute;
-  bottom: 190px;
+  bottom: 150px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.feature-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature-lists>.subtitle-list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-list-text {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 50px;
+}
+
+.list-pict {
+  margin-bottom: 15px;
+  width: 70%;
 }
 
 .subtitle-list {
@@ -44,10 +72,16 @@
   justify-content: space-around;
 }
 
+.comic-contents {
+  background-color: rgb(255, 255, 255);
+}
+
 .title {
   display: flex;
   justify-content: center;
+  font-size: 35px;
 }
+
 .comic-lists {
   width: 100vw;
   display: flex;

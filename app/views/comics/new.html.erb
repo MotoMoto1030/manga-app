@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
-  <div class="items-sell-main"> 
-      <h2 class="items-sell-title">共有する漫画を決めよう！</h2>
+  <div class="comics-sell-main"> 
+      <h2 class="comics-sell-title">共有する漫画を決めよう！</h2>
       <%= form_with model: @comics, url: comics_path, local: true do |f| %>
 
         <div class="img-upload">
@@ -13,7 +13,7 @@
             <p>
               クリックしてファイルをアップロード
             </p>
-            <%= f.file_field :image, id:"item-image" %>
+            <%= f.file_field :image, id:"comic-image" %>
           </div>
         </div>
 
