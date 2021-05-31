@@ -22,6 +22,7 @@
     </h2>
     <ul class='feature-lists'>
       <li class='subtitle-list'>
+        <%= image_tag "upload1.png", class:"list-pict" %>
         <h3 class='feature-list-text'>
           自分の好きな漫画を投稿しよう！
         </h3>
@@ -30,6 +31,7 @@
         </p>
       </li>
       <li class='subtitle-list'>
+        <%= image_tag "like-icon1.png", class:"list-pict" %>
         <h3 class='feature-list-text'>
           他ユーザーの投稿にいいねしよう！
         </h3>
@@ -37,13 +39,21 @@
           他ユーザーの投稿に良さげな漫画があればいいねして保存しよう！
         </p>
       </li>
+      <li class='subtitle-list'>
+        <%= image_tag "toukou1.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          いいねしてマイページに残そう！
+        </h3>
+        <p class='feature-list-description'>
+          いいねする事でマイページに気になる他の漫画を保存する事ができる！
+        </p>
+      </li>
     </ul>
   </div>
   <%# /特徴部分 %>
 
   <%# 作品一覧 %>
-  <div class='item-contents'>
-    <%= link_to 'ここから漫画を投稿！！', new_comic_path, class: "subtitle" %>
+  <div class='comic-contents'>
     <h2 class='title'>漫画集積所</h2>
     <ul class='comic-lists'>
 

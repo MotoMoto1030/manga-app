@@ -1,17 +1,17 @@
+<%= render "shared/header" %>
+
 <div class="mypage">
   <p><%= @nickname %>さんの漫画一覧</p>
 
   <% @comics.each do |comic| %>
       <li class='list'>
-        <%= link_to "#" do %>
-          <div class='comic-img-content'>
-            <%= image_tag comic.image, class: "comic-img" %>
-            <div class='comic-info'>
-              <h3 class='comic-title'>
-                <%= comic.title %>
-              </h3>
+        <div class='comic-img-content'>
+          <%= image_tag comic.image, class: "comic-img" %>
+          <div class='comic-info'>
+            <h3 class='comic-title'>
+              <%= comic.title %>
+            </h3>
           </div>
-        <% end %>
       </li>
       <% end %>
     <p><%= @nickname %>さんがいいねした漫画一覧</p>
@@ -21,8 +21,10 @@
           <% if current_user.already_liked?(comic) %>
             <%= image_tag comic.image, class: "comic-img" %>
           <% else %>
-            <p>まだいいねされておりません！探してきましょう！！</p>
+            <%=link_to 'あなたはまだいいねしてません！探しにいきましょう！', root_path, class:"back-btn" %>
           <% end %>
         <% end %>
       <% end %>
 </div>
+
+  <%=link_to 'Topページにもどる', root_path, class:"back-btn" %>
