@@ -1,42 +1,46 @@
 <%= render "shared/header" %>
+  <div class="comic-up-contents">
+    <div class="comics-up-main"> 
+        <h2 class="comics-up-title">画像を投稿しよう！</h2>
+        <%= form_with model: @comics, url: comics_path, local: true do |f| %>
 
-  <div class="comics-sell-main"> 
-      <h2 class="comics-sell-title">共有する漫画を決めよう！</h2>
-      <%= form_with model: @comics, url: comics_path, local: true do |f| %>
+          <div class="img-upload">
+            <div class="weight-bold-text">
+              漫画画像
+              <span class="indispensable">必須</span>
+            </div>
+            <div class="click-upload">
+              <p>
+                投稿する漫画画像を選択
+              </p>
+              <%= f.file_field :image, id:"comic-image" %>
+            </div>
+          </div>
 
-        <div class="img-upload">
-          <div class="weight-bold-text">
-            出品画像
-            <span class="indispensable">必須</span>
+          <div class="new-comics">
+            <div class="weight-bold-text">
+              漫画のタイトル
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :title, class:"comics-text", id:"comic-title", placeholder:"漫画タイトルを入力" %>
           </div>
-          <div class="click-upload">
-            <p>
-              クリックしてファイルをアップロード
-            </p>
-            <%= f.file_field :image, id:"comic-image" %>
-          </div>
-        </div>
 
-        <div class="new-comics">
-          <div class="weight-bold-text">
-            漫画タイトル
-            <span class="indispensable">必須</span>
+          <div class="comics-detail">
+            <div class="form">
+              <div class="weight-bold-text">
+                ジャンルの選択
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box"}) %> 
+            </div>
+            </div>
           </div>
-          <%= f.text_area :title, class:"comics-text", id:"comic-title", placeholder:"マンガタイトル" %>
-        </div>
-
-        <div class="form">
-          <div class="weight-bold-text">
-            ジャンル
-            <span class="indispensable">必須</span>
-          </div>
-          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box"}) %> 
-        </div>
-          <div class="sell-btn-contents">
-            <%= f.submit "投稿する" ,class:"sell-btn" %>
-            <%=link_to 'もどる', root_path, class:"back-btn" %>
-          </div>
-      <% end %>
+            <div class="upload-btn-contents">
+              <%= f.submit "投稿する" ,class:"sell-btn" %>
+              <%=link_to 'もどる', root_path, class:"back-btn" %>
+            </div>
+        <% end %>
+    </div>
   </div>
 
 
