@@ -23,7 +23,7 @@ Ruby,HTML,CSS,Github
 
 ## 今後の実装
 ・AWSを用いた画像アップロード<br>
-・javascriptを用いたビューの編集
+・javascriptを用いたビューの編集<br>
 ・一つの漫画にコメントし合うコメント機能
 
 # テーブル設計
