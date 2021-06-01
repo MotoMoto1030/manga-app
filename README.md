@@ -30,26 +30,26 @@
 
 ## comics テーブル
 
-  | Column                | type   | Options                   |
-  | --------------------- | ------ | ------------------------- |
-  | title                 | string | null: false               |
-  | genre                 | string | null: false               |
-
+  | Column                | type       | Options                        |
+  | --------------------- | ---------- | ------------------------------ |
+  | title                 | string     | null: false                    |
+  | genre                 | string     | null: false                    |
+  | user                  | references | null: false, foreign_key: true |
 ### Association
   has_many   :comments<br>
   belong_to :user
 
-## comments テーブル
+## likes テーブル
 
   | Column                | type       | Options                            |
   | --------------------- | ---------- | ---------------------------------- |
-  | text                  | string     | null: false                        |
   | user                  | references | null: false, foreign_key: true     |
   | comic                 | references | null: false, foreign_key: true     |
 
 ### Association
   belong_to :user<br>
   belong_to :comic
+  
 
 
 
