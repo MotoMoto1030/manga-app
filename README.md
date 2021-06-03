@@ -26,9 +26,11 @@ Ruby,HTML,CSS,Github
 ・javascriptを用いたビューの編集<br>
 ・一つの漫画にコメントし合うコメント機能
 
-## デプロイについて試行錯誤中<br>
-完了次第この記述削除
-
+## デプロイについて問題発生<br>
+migrationはreferenceを使って紐づける際は親を一番最初に作成しないと大変苦労する。(今回はuser。)<br>
+rollbackできるかどうかの点検？を必ず行うように気をつける。<br>
+Devise create usersがrollbackできない。remove_index(:users, {:column=>:reset_password_token})がヒント？<br>
+次回始める際は必ずターミナルでrollbackを試す事。
 # テーブル設計
 
 ## users テーブル
